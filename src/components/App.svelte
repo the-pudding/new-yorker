@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import firebase from "firebase/app";
   import "firebase/firestore";
+  import Intro from "$components/Intro.svelte";
   import Demo from "$components/helpers/Demo.svelte";
   import Footer from "$components/Footer.svelte";
 
@@ -80,5 +81,6 @@
   $: console.log(ratingData);
 </script>
 
+<Intro />
 <Demo />
 <!-- <Footer /> -->
