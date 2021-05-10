@@ -4,6 +4,9 @@ import svg from "vite-plugin-svgstring";
 import dsv from "@rollup/plugin-dsv";
 import sveltePreprocess from "svelte-preprocess";
 import autoprefixer from "autoprefixer";
+import { index } from "d3-array";
+
+const dev = process.env.NODE_ENV === "development";
 
 const preprocess = sveltePreprocess({
 	postcss: {
@@ -32,8 +35,13 @@ const config = {
 				dsv(),
 				svg()
 			]
+		},
+		paths: {
+			base: dev ? "" : "/projects/caption-contest"
 		}
 	}
 };
+
+console.log(process.env.NODE_ENV);
 
 export default config;

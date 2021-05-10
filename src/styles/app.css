@@ -29,3 +29,7 @@
 	--color-selection: var(--base-gray);
   --color-highlight: var(--base-yellow);
 }
+
+body {
+	font-size: 20px;
+}

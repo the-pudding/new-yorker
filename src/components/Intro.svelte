@@ -2,12 +2,23 @@
   import copy from "$data/doc.json";
 </script>
 
-<p>{@html copy.intro}</p>
+<div>
+  <h1>{copy.hed}</h1>
+  <p>{copy.dek}</p>
+
+  <details>
+    <summary>{copy.summary}</summary>
+    <span>{@html copy.details}</span>
+  </details>
+</div>
 
 <style>
-  p {
-    font-size: 2em;
-    max-width: 28em;
+  div {
     margin: 0 auto;
+  }
+
+  h1 {
+    margin: 0 auto;
+    line-height: 1.2;
   }
 </style>
