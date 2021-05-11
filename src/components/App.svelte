@@ -18,7 +18,7 @@
 
 <div class="wrapper">
   <Intro />
-  <Contest {...contests[0]} prompt={copy.prompt} archives={archiveData.length} />
+  <Contest {...contests[0]} prompt={copy.prompt} archives={archiveData.length} more={copy.more} />
   <Archive data={archiveData} text={copy.archive} />
 </div>
 

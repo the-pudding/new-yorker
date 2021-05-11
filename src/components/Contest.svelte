@@ -7,6 +7,7 @@
   export let image;
   export let attempt;
   export let prompt;
+  export let more;
   export let archives;
 
   const firebaseConfig = {
@@ -94,7 +95,7 @@
   {/if}
 
   <p>Contest #{slug}, {date}</p>
-  <p>{description}</p>
+  <p>{description} <a href="/contest/{slug}">{more}</a></p>
 </div>
 
 <div class="prompt">
