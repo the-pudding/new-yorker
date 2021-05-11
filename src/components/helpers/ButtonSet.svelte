@@ -4,10 +4,10 @@
   export let legendPosition = "top";
   export let labelClass = "";
   export let disabled = false;
-  export let value = options.length ? options[0].value : "";
+  export let value = "";
 
   const id = `legend-${Math.floor(Math.random() * 1000000)}`;
-  const makeSlug = (str = "") => str.toLowerCase().replace(/\W/g, "");
+  const makeSlug = (str = "") => `${str}`.toLowerCase().replace(/\W/g, "");
 
   $: optionsWithSlug = options.map((d) => ({ ...d, val: d.value, slug: makeSlug(d.value) }));
   $: isTop = legendPosition === "top";
@@ -75,8 +75,7 @@
   label {
     appearance: none;
     user-select: none;
-    line-height: 1;
-    margin: 0;
+    line-height: 1.2;
     padding: 0.5em;
     border-radius: 0;
     border: 2px solid var(--base-off-black);
@@ -85,6 +84,17 @@
     font-family: inherit;
     font-size: 1em;
     display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .option {
+    flex: 1;
+    flex-basis: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
   }
 
   .option + .option label {

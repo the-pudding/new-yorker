@@ -5,7 +5,8 @@
 <script>
   import Meta from "$components/Meta.svelte";
   import App from "$components/App.svelte";
+  import copy from "$data/doc.json";
 </script>
 
-<Meta />
+<Meta title={copy.hed} />
 <App />

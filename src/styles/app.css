@@ -26,10 +26,28 @@
   --color-link: var(--base-purple);
   --color-focus: var(--base-red);
 	--color-border: var(--base-gray-light);
-	--color-selection: var(--base-gray);
+	--color-selection: var(--base-gray-light);
   --color-highlight: var(--base-yellow);
 }
 
 body {
 	font-size: 20px;
+}
+
+summary {
+	cursor: pointer;
+}
+
+.btn {
+	text-decoration: none;
+  background-color: var(--background-form);
+  border: none;
+  border-radius: 4px;
+  color: var(--color-form);
+  font-family: var(--font-form);
+  font-size: 0.75em;
+	font-weight: bold;
+  outline: none;
+  padding: 0.5em;
+	text-transform: uppercase;
 }
