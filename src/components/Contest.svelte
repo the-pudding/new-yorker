@@ -95,7 +95,7 @@
   {/if}
 
   <p>Contest #{slug}, {date}</p>
-  <p>{description} <a href="/contest/{slug}">{more}</a></p>
+  <p>{description} <a href="contest/{slug}">{more}</a></p>
 </div>
 
 <div class="prompt">
