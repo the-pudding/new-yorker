@@ -38,7 +38,8 @@ const config = {
 		},
 		paths: {
 			base: dev ? "" : "/projects/caption-contest"
-		}
+		},
+		trailingSlash: "always"
 	}
 };
 
