@@ -1,13 +1,18 @@
 <script>
   import { onMount } from "svelte";
+  import { fade } from "svelte/transition";
+  import { shuffle } from "d3";
   import ButtonSet from "$components/helpers/ButtonSet.svelte";
   export let slug;
   export let data;
 
   let selected;
   let docMap = ["unfunny", "neutral", "funny"];
+  let current = 0;
 
   const captions = data.map((text, id) => ({ text, id }));
+
+  $: shuffle(captions);
 
   const firebaseConfig = {
     apiKey: "AIzaSyBGOC8CbEAvm6WUSKfvj4_VPFa4zUuYy6k",
@@ -67,10 +72,12 @@
   };
 
   const onVote = () => {
-    const { id } = captions[0];
+    const { id } = captions[current];
     const doc = db.collection(slug).doc(`${id}`);
     const value = docMap[selected];
     doc.update({ [[value]]: firebase.firestore.FieldValue.increment(1) });
+    selected = undefined;
+    current += 1;
   };
 
   onMount(async () => {
@@ -88,25 +95,45 @@
   $: if (typeof selected === "number") onVote();
 </script>
 
-<button class="btn" on:click={reset}>RESET</button>
+{#if current < captions.length}
+  <p class="counter">{current + 1} of {captions.length}</p>
+  <p class="prompt">How funny is this A.I. generated caption?</p>
 
-<div class="vote">
-  <ButtonSet
-    bind:value={selected}
-    options={[
-      { value: 0, label: "I don’t get it" },
-      { value: 1, label: "Light chuckle" },
-      { value: 2, label: "That’s Funny!" }
-    ]}
-  />
-</div>
-{#each captions as { text, id }}
-  <p data-id={id}>{text}</p>
-{/each}
+  {#key current}
+    <div in:fade>
+      <!-- <button class="btn" on:click={reset}>RESET</button> -->
+      <p class="caption">{captions[current].text}</p>
+
+      <div class="vote">
+        <ButtonSet
+          bind:value={selected}
+          options={[
+            { value: 0, label: "I don’t get it" },
+            { value: 1, label: "Light chuckle" },
+            { value: 2, label: "That’s Funny!" }
+          ]}
+        />
+      </div>
+    </div>
+  {/key}
+{:else}
+  <div in:fade>
+    <p>Thanks for voting!</p>
+  </div>
+{/if}
 
 <style>
   .vote {
     max-width: 20em;
     margin: 0 auto;
+  }
+
+  .counter {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .prompt {
+    text-align: center;
   }
 </style>
