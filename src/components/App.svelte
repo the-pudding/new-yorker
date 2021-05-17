@@ -2,6 +2,7 @@
   import Intro from "$components/Intro.svelte";
   import Contest from "$components/Contest.svelte";
   import Archive from "$components/Archive.svelte";
+  import About from "$components/About.svelte";
   import Footer from "$components/Footer.svelte";
   import copy from "$data/doc.json";
 
@@ -20,6 +21,7 @@
   <Intro />
   <Contest {...contests[0]} prompt={copy.prompt} />
   <Archive data={archiveData} />
+  <About tldr={copy.aboutTldr} full={copy.about} />
 </div>
 
 <!-- <Footer /> -->
