@@ -22,4 +22,4 @@
 <Archive data={archiveData} />
 <About tldr={copy.aboutTldr} full={copy.about} />
 
-<!-- <Footer /> -->
+<Footer />

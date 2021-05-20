@@ -17,3 +17,9 @@
     </details>
   </div>
 </section>
+
+<style>
+  section {
+    padding-bottom: 2em;
+  }
+</style>

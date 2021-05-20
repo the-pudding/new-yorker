@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
-  import { shuffle } from "d3";
+  import shuffle from "$utils/shuffle.js";
   import ButtonSet from "$components/helpers/ButtonSet.svelte";
   export let slug;
   export let data;
