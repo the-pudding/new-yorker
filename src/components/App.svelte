@@ -17,18 +17,9 @@
   }));
 </script>
 
-<div class="wrapper">
-  <Intro />
-  <Contest {...contests[0]} prompt={copy.prompt} />
-  <Archive data={archiveData} />
-  <About tldr={copy.aboutTldr} full={copy.about} />
-</div>
+<Intro />
+<Contest {...contests[0]} prompt={copy.prompt} />
+<Archive data={archiveData} />
+<About tldr={copy.aboutTldr} full={copy.about} />
 
 <!-- <Footer /> -->
-<style>
-  .wrapper {
-    max-width: 540px;
-    margin: 0 auto;
-    padding: 0 1em;
-  }
-</style>

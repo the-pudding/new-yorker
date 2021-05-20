@@ -9,6 +9,10 @@
 </header>
 
 <style>
+  header {
+    background-color: var(--base-off-black);
+  }
+
   .wordmark {
     max-width: 10em;
     margin: 0 auto;
@@ -17,7 +21,7 @@
 
   .wordmark a {
     border: none;
-    color: var(--color-body);
+    color: var(--base-gray-medium);
   }
 
   .wordmark a:hover {

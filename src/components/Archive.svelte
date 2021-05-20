@@ -3,7 +3,7 @@
 </script>
 
 <div id="archive">
-  <p>Read about our past attempts</p>
+  <p>Each week we try a new attempt!</p>
   {#if data.length}
     <ul>
       {#each data as { slug, title }}
