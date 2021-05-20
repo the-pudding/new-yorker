@@ -4,14 +4,16 @@
 </script>
 
 <section>
-  <h2>Why are we doing this?</h2>
-  <p><strong>TLDR:</strong> {tldr}</p>
-  <summary>
-    And if you want, here’s <span>the long version</span>
-    <detail>
-      {#each full as { value }}
-        <p>{value}</p>
-      {/each}
-    </detail>
-  </summary>
+  <div class="col">
+    <p>Why are we doing this?</p>
+    <p class="sm"><strong>TLDR:</strong> {tldr}</p>
+    <details class="sm">
+      <summary>And if you want, here’s the long version </summary>
+      <span>
+        {#each full as { value }}
+          <p>{value}</p>
+        {/each}
+      </span>
+    </details>
+  </div>
 </section>

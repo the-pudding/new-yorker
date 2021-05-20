@@ -34,7 +34,11 @@
             {disabled}
             bind:group={value}
           />
-          <label class="option {labelClass}" for={`${id}-${option.slug}`}>
+          <label
+            class="sm option {labelClass}"
+            for={`${id}-${option.slug}`}
+            data-emoji={option.emoji}
+          >
             {option.label || option.value}
           </label>
         </div>
@@ -45,8 +49,8 @@
 
 <style>
   .button-set {
-    display: inline-block;
     margin-bottom: 4px;
+    width: 100%;
   }
 
   .group {
@@ -69,23 +73,35 @@
   }
 
   .options {
+    width: 100%;
     display: flex;
+    justify-content: space-between;
   }
 
   label {
+    position: relative;
     appearance: none;
     user-select: none;
     line-height: 1.2;
     padding: 0.5em;
-    border-radius: 0;
-    border: 2px solid var(--base-off-black);
+    border-radius: var(--radius);
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.2);
     outline: none;
     cursor: pointer;
     font-family: inherit;
-    font-size: 1em;
-    display: inline-block;
-    text-transform: uppercase;
-    font-weight: bold;
+    display: block;
+    width: 8em;
+    margin-bottom: 2em;
+  }
+
+  label::after {
+    content: attr(data-emoji);
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 110%);
+    font-size: 2em;
   }
 
   .option {
@@ -98,18 +114,6 @@
   }
 
   .option + .option label {
-    border-left-width: 0;
-  }
-
-  .option:first-of-type label {
-    border-radius: 4px 0 0 4px;
-  }
-
-  .option:last-of-type label {
-    border-radius: 0 4px 4px 0;
-  }
-
-  .option + .option > label {
     border-left-width: 0;
   }
 

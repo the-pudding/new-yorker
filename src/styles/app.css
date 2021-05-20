@@ -7,7 +7,7 @@
 :root {
 	/* font */
 	--sans: "National 2 Web", Helvetica, Arial, sans-serif;
-	--serif: "Tiempos Text Web", Georgia, Times, serif;
+	--serif: "Recoleta Regular", Georgia, Times, serif;
 	--mono: Menlo, Consolas, Monaco, "Courier New", monospace;
 	
 	/* z-index */
@@ -28,21 +28,34 @@
 	--color-border: var(--base-gray-light);
 	--color-selection: var(--base-gray-light);
   --color-highlight: var(--base-yellow);
+	--size-sm: 16px;
+	--size-md: 21px;
 
 	--max-width: 540px;
-	--radius: 4px;
+	--radius: 6px;
 }
 
 body {
-	font-size: 20px;
+	font-size: var(--size-md);
 	background-color: var(--base-red);
 }
 
+h1, h2, h3 {
+	font-family: var(--serif);
+	line-height: 1.2;
+}
+
+h1 {
+	font-size: 46px;
+}
+
+h2 {
+	font-size: 32px;
+}
+
 details span {
-	margin-top: 1em;
 	display: block;
-	background: rgba(255, 255, 255, 0.2);
-	padding: 0.5em;
+	padding: 1em;
 }
 
 details summary > * {
@@ -52,12 +65,26 @@ details summary > * {
 summary {
 	cursor: pointer;
 	margin: 0 auto;
+	background: rgba(255, 255, 255, 0.2);
+	padding: 0.5em;
+	border-radius: var(--radius);
 }
 
 summary span {
-	/* background: var(--base-gray-dark);
+	background: none;
+	padding: 0;
+}
+
+img {
 	border-radius: var(--radius);
-	padding: 0 0.25em; */
+}
+
+.sm {
+	font-size: var(--size-sm);
+}
+
+.md {
+	font-size: var(--size-md);
 }
 
 .btn {

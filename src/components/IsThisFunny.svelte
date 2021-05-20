@@ -96,8 +96,8 @@
 </script>
 
 {#if current < captions.length}
-  <p class="counter">{current + 1} of {captions.length}</p>
-  <p class="prompt">How funny is this A.I. generated caption?</p>
+  <p class="counter sm">{current + 1} of {captions.length}</p>
+  <p class="prompt sm">Is this A.I.-generated caption funny?</p>
 
   {#key current}
     <div in:fade>
@@ -108,9 +108,9 @@
         <ButtonSet
           bind:value={selected}
           options={[
-            { value: 0, label: "I don’t get it" },
-            { value: 1, label: "Light chuckle" },
-            { value: 2, label: "That’s Funny!" }
+            { value: 0, label: "It stinks!", emoji: "😴" },
+            { value: 1, label: "Sort of...", emoji: "😐" },
+            { value: 2, label: "It works!", emoji: "😂" }
           ]}
         />
       </div>
@@ -124,16 +124,21 @@
 
 <style>
   .vote {
-    max-width: 20em;
     margin: 0 auto;
+    padding-bottom: 2em;
   }
 
   .counter {
     text-align: center;
-    text-transform: uppercase;
   }
 
   .prompt {
+    text-align: center;
+  }
+
+  .caption {
+    font-family: var(--serif);
+    font-size: 1.25em;
     text-align: center;
   }
 </style>
