@@ -5,7 +5,7 @@
 <header>
   <div class="col">
     <div class="wordmark">
-      <a href="https://pudding.cool">{@html wordmark}</a>
+      <a href="https://pudding.cool" aria-label="The Pudding">{@html wordmark}</a>
     </div>
   </div>
 </header>
