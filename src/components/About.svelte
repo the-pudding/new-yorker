@@ -1,6 +1,7 @@
 <script>
   export let tldr;
   export let full;
+  export let credits;
 </script>
 
 <section>
@@ -8,13 +9,14 @@
     <p>Why are we doing this?</p>
     <p class="sm"><strong>TLDR:</strong> {tldr}</p>
     <details class="sm">
-      <summary>And if you want, here’s the long version </summary>
+      <summary>And if you want, here’s the long version.</summary>
       <span>
         {#each full as { value }}
-          <p>{value}</p>
+          <p>{@html value}</p>
         {/each}
       </span>
     </details>
+    <p class="sm">{@html credits}</p>
   </div>
 </section>
 

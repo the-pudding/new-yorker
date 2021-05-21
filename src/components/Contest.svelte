@@ -5,7 +5,7 @@
   export let hed;
   export let dek;
   export let image;
-  export let attempt;
+  export let author;
   export let widgetName;
   export let widgetData;
 </script>
@@ -27,10 +27,10 @@
       <h2>Help the computer submit its best caption to this week’s contest.</h2>
       <figure>
         <figcaption class="sm">
-          Here is the cartoon for <a href="https://www.newyorker.com/cartoons/contest">#{slug}</a> -
-          {date}
+          <a href="https://www.newyorker.com/cartoons/contest">#{slug}</a>: Here is the cartoon for
+          the week of {date} by {author}
         </figcaption>
-        <img src={image} alt="captionless cartoon" />
+        <img src={image} alt="captionless cartoon by {author}" />
       </figure>
       {#if widgetName === "IsThisFunny"}
         <IsThisFunny {slug} data={widgetData} />
@@ -62,6 +62,6 @@
 
   figcaption {
     line-height: 1.4;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
   }
 </style>

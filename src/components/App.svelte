@@ -20,6 +20,6 @@
 <Intro />
 <Contest {...contests[0]} prompt={copy.prompt} />
 <Archive data={archiveData} />
-<About tldr={copy.aboutTldr} full={copy.about} />
+<About tldr={copy.aboutTldr} full={copy.about} credits={copy.credits} />
 
 <Footer />

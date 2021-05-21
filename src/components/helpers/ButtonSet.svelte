@@ -90,7 +90,7 @@
     cursor: pointer;
     font-family: inherit;
     display: block;
-    width: 8em;
+    width: 7em;
     margin-bottom: 2em;
   }
 

@@ -3,8 +3,10 @@
 </script>
 
 <header>
-  <div class="wordmark">
-    <a href="https://pudding.cool">{@html wordmark}</a>
+  <div class="col">
+    <div class="wordmark">
+      <a href="https://pudding.cool">{@html wordmark}</a>
+    </div>
   </div>
 </header>
 
@@ -14,8 +16,7 @@
   }
 
   .wordmark {
-    max-width: 10em;
-    margin: 0 auto;
+    max-width: 8em;
     padding: 1em 0;
   }
 

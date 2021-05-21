@@ -7,8 +7,8 @@
     <h1>{copy.hed}</h1>
     <p>{copy.dek}</p>
 
-    <details>
-      <summary><span>New here? Learn About the experiment</span></summary>
+    <details class="sm">
+      <summary><span>New here? Learn about the experiment.</span></summary>
       <span>{@html copy.details}</span>
     </details>
   </div>

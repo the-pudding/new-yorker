@@ -95,34 +95,40 @@
   $: if (typeof selected === "number") onVote();
 </script>
 
-{#if current < captions.length}
-  <p class="counter sm">{current + 1} of {captions.length}</p>
-  <p class="prompt sm">Is this A.I.-generated caption funny?</p>
+<div class="wrapper">
+  {#if current < captions.length}
+    <p class="counter sm">{current + 1} of {captions.length}</p>
+    <p class="prompt sm">Is this A.I.-generated caption funny?</p>
 
-  {#key current}
-    <div in:fade>
-      <!-- <button class="btn" on:click={reset}>RESET</button> -->
-      <p class="caption">{captions[current].text}</p>
+    {#key current}
+      <div in:fade>
+        <!-- <button class="btn" on:click={reset}>RESET</button> -->
+        <p class="caption">{captions[current].text}</p>
 
-      <div class="vote">
-        <ButtonSet
-          bind:value={selected}
-          options={[
-            { value: 0, label: "It stinks!", emoji: "😴" },
-            { value: 1, label: "Sort of...", emoji: "😐" },
-            { value: 2, label: "It works!", emoji: "😂" }
-          ]}
-        />
+        <div class="vote">
+          <ButtonSet
+            bind:value={selected}
+            options={[
+              { value: 0, label: "It stinks!", emoji: "😴" },
+              { value: 1, label: "Sort of...", emoji: "😐" },
+              { value: 2, label: "It works!", emoji: "😂" }
+            ]}
+          />
+        </div>
       </div>
+    {/key}
+  {:else}
+    <div class="thanks" in:fade>
+      <p>Thanks for voting!</p>
     </div>
-  {/key}
-{:else}
-  <div in:fade>
-    <p>Thanks for voting!</p>
-  </div>
-{/if}
+  {/if}
+</div>
 
 <style>
+  .wrapper {
+    min-height: 280px;
+  }
+
   .vote {
     margin: 0 auto;
     padding-bottom: 2em;
@@ -140,5 +146,11 @@
     font-family: var(--serif);
     font-size: 1.25em;
     text-align: center;
+  }
+
+  .thanks {
+    transform: translateY(140px);
+    text-align: center;
+    font-family: var(--serif);
   }
 </style>

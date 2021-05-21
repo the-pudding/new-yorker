@@ -23,13 +23,13 @@
   --background-form: var(--base-off-white);
 	--color-body: var(--base-off-black);
 	--color-placeholder: var(--base-gray-dark);
-  --color-link: var(--base-purple);
-  --color-focus: var(--base-red);
+  --color-link: var(--base-off-black);
+  --color-focus: var(--base-white);
 	--color-border: var(--base-gray-light);
 	--color-selection: var(--base-gray-light);
   --color-highlight: var(--base-yellow);
-	--size-sm: 16px;
-	--size-md: 21px;
+	--size-sm: 14px;
+	--size-md: 18px;
 
 	--max-width: 540px;
 	--radius: 6px;
@@ -46,11 +46,11 @@ h1, h2, h3 {
 }
 
 h1 {
-	font-size: 46px;
+	font-size: 32px;
 }
 
 h2 {
-	font-size: 32px;
+	font-size: 24px;
 }
 
 details span {
@@ -105,4 +105,19 @@ img {
 	max-width: var(--max-width);
 	margin: 0 auto;
 	padding: 0 1em;
+}
+
+@media only screen and (min-width: 600px) {
+	body {
+		--size-sm: 16px;
+		--size-md: 21px;
+	}
+	
+	h1 {
+		font-size: 46px;
+	}
+
+	h2 {
+		font-size: 32px;
+	}
 }
