@@ -17,6 +17,11 @@
       </span>
     </details>
     <p class="sm">{@html credits}</p>
+    <p class="sm">
+      Want to see another experiment with GPT-3? Check out <a
+        href="https://pudding.cool/2021/03/love-and-ai/">Nothing Breaks Like A.I. Heart</a
+      >.
+    </p>
   </div>
 </section>
 

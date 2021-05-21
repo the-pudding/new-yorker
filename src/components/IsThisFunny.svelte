@@ -97,20 +97,18 @@
 
 <div class="wrapper">
   {#if current < captions.length}
-    <p class="counter sm">{current + 1} of {captions.length}</p>
-    <p class="prompt sm">Is this A.I.-generated caption funny?</p>
-
+    <p class="counter sm">Caption {current + 1} of {captions.length}</p>
     {#key current}
       <div in:fade>
         <!-- <button class="btn" on:click={reset}>RESET</button> -->
         <p class="caption">{captions[current].text}</p>
-
+        <p class="prompt sm">Is this A.I.-generated caption funny?</p>
         <div class="vote">
           <ButtonSet
             bind:value={selected}
             options={[
               { value: 0, label: "It stinks!", emoji: "😴" },
-              { value: 1, label: "Sort of...", emoji: "😐" },
+              { value: 1, label: "It’s OK...", emoji: "😐" },
               { value: 2, label: "It works!", emoji: "😂" }
             ]}
           />
