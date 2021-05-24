@@ -22,7 +22,7 @@
         </summary>
         <span
           >{#each explanation as { type, value }}
-            <p>{@html value}</p>
+            <p>{@html value.replace("\\:", ":")}</p>
           {/each}</span
         >
       </details>
