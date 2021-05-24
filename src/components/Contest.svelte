@@ -6,6 +6,7 @@
   export let dek;
   export let image;
   export let author;
+  export let explanation;
   export let widgetName;
   export let widgetData;
 </script>
@@ -19,7 +20,11 @@
         <summary>
           <span>For the tech-nerds, here is how it works.</span>
         </summary>
-        <span>test</span>
+        <span
+          >{#each explanation as { type, value }}
+            <p>{@html value}</p>
+          {/each}</span
+        >
       </details>
     </div>
 
@@ -28,7 +33,7 @@
       <figure>
         <figcaption class="sm">
           <a href="https://www.newyorker.com/cartoons/contest">#{slug}</a>: Here is the cartoon for
-          the week of {date} by {author}
+          {date} by {author}
         </figcaption>
         <img src={image} alt="captionless cartoon by {author}" />
       </figure>
@@ -58,6 +63,12 @@
 
   .prompt {
     margin-top: 3em;
+  }
+
+  figure,
+  img {
+    width: 100%;
+    display: block;
   }
 
   figcaption {

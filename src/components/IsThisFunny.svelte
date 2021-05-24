@@ -108,7 +108,7 @@
             bind:value={selected}
             options={[
               { value: 0, label: "It stinks!", emoji: "😴" },
-              { value: 1, label: "It’s OK...", emoji: "😐" },
+              { value: 1, label: "It’s okay...", emoji: "😐" },
               { value: 2, label: "It works!", emoji: "😂" }
             ]}
           />
