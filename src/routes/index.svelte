@@ -8,5 +8,5 @@
   import copy from "$data/doc.json";
 </script>
 
-<Meta title={copy.hed} decription={copy.dek} url="https://pudding.cool/projects/caption-contest" />
+<Meta title={copy.hed} description={copy.dek} url="https://pudding.cool/projects/caption-contest" />
 <App />
