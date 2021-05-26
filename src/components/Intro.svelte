@@ -23,13 +23,13 @@
   }
 
   summary {
-    background-color: #222222;
-    color: #fff;
+    background-color: var(--base-black);
+    color: var(--base-white);
     border: none;
   }
 
-  ::marker{
-    color: white;
+  ::marker {
+    color: var(--base-white);
   }
 
   h1 {
@@ -44,6 +44,4 @@
   details summary span {
     border-left: none;
   }
-
-
 </style>

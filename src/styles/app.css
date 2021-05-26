@@ -21,9 +21,9 @@
 	--font-form: var(--sans);
 	--background-body: var(--base-white);
   --background-form: var(--base-off-white);
-	--color-body: var(--base-off-black-text);
+	--color-body: var(--base-off-black);
 	--color-placeholder: var(--base-gray-dark);
-  --color-link: var(--base-off-black-text);
+  --color-link: var(--base-off-black);
   --color-focus: var(--base-white);
 	--color-border: var(--base-gray-light);
 	--color-selection: var(--base-gray-light);
@@ -46,11 +46,11 @@ h1, h2, h3 {
 }
 
 h1 {
-	font-size: 48px;
+	font-size: 32px;
 }
 
 h2 {
-	font-size: 36px;
+	font-size: 24px;
 }
 
 blockquote {

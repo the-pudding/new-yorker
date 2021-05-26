@@ -114,7 +114,7 @@
   input[type="radio"] + label {
     background: var(--base-white-transparent);
     border: 1px solid var(--base-black-transparent);
-    color: var(--base-off-black-text);
+    color: var(--base-off-black);
   }
 
   input[type="radio"]:checked + label,

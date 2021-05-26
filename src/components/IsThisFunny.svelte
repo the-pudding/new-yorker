@@ -102,7 +102,7 @@
       <div in:fade>
         <!-- <button class="btn" on:click={reset}>RESET</button> -->
         <p class="caption">{captions[current].text}</p>
-        <p class="prompt sm">Is this A.I.-generated caption funny?</p>
+        <p class="prompt sm">Is this AI-generated caption funny?</p>
         <div class="vote">
           <ButtonSet
             bind:value={selected}
@@ -142,7 +142,6 @@
 
   .caption {
     font-family: var(--serif);
-    font-size: 1.25em;
     text-align: center;
   }
 
@@ -150,5 +149,11 @@
     transform: translateY(140px);
     text-align: center;
     font-family: var(--serif);
+  }
+
+  @media only screen and (min-width: 600px) {
+    .caption {
+      font-size: 1.25em;
+    }
   }
 </style>

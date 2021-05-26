@@ -13,7 +13,6 @@
 <style>
   header {
     background-color: var(--base-off-black);
-    margin-bottom: -1px;
   }
 
   p {
@@ -22,7 +21,7 @@
 
   .wordmark {
     max-width: 8em;
-    padding: 1em 0;
+    padding: 0;
     padding-top: 3rem;
     padding-bottom: 2rem;
   }

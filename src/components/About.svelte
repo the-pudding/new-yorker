@@ -16,7 +16,7 @@
         {/each}
       </span>
     </details>
-    
+
     <div class="credits">
       <p class="sm">{@html credits}</p>
       <p class="sm">
@@ -41,5 +41,4 @@
   h3 {
     margin-bottom: 1.5rem;
   }
-
 </style>

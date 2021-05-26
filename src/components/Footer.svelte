@@ -70,8 +70,8 @@
 
 <style>
   footer {
-    background-color: var(--color-body);
-    color: var(--base-off-black-text);
+    background-color: var(--base-off-black);
+    color: var(--base-off-white);
     font-family: var(--sans);
     padding: 3em 1em;
     margin-top: 3em;
@@ -80,7 +80,7 @@
   a,
   a:visited,
   a:hover {
-    color: var(--base-off-black-text);
+    color: var(--base-off-white);
   }
 
   .stories {
