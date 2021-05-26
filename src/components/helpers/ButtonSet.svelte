@@ -85,12 +85,12 @@
     line-height: 1.2;
     padding: 0.5em;
     border-radius: var(--radius);
-    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
     outline: none;
     cursor: pointer;
     font-family: inherit;
     display: block;
-    width: 7em;
+    width: 6em;
     margin-bottom: 2em;
   }
 
@@ -109,22 +109,23 @@
   }
 
   .option + .option label {
-    border-left-width: 0;
   }
 
   input[type="radio"] + label {
-    background: var(--base-white);
-    color: var(--base-off-black);
+    background: var(--base-white-transparent);
+    border: 1px solid var(--base-black-transparent);
+    color: var(--base-off-black-text);
   }
 
   input[type="radio"]:checked + label,
   input[type="radio"]:checked:hover + label {
-    background: var(--base-off-black);
+    background: var(--base-white-transparent);
     color: var(--base-white);
   }
 
   input[type="radio"]:hover + label {
-    background: var(--base-off-white);
+    background: var(--base-off-black);
+    color: var(--base-white);
   }
 
   input[type="radio"]:focus + label {

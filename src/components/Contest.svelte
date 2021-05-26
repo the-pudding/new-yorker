@@ -73,6 +73,6 @@
 
   figcaption {
     line-height: 1.4;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
   }
 </style>

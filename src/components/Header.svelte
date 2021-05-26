@@ -13,11 +13,18 @@
 <style>
   header {
     background-color: var(--base-off-black);
+    margin-bottom: -1px;
+  }
+
+  p {
+    font-size: 1.2rem;
   }
 
   .wordmark {
     max-width: 8em;
     padding: 1em 0;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
   }
 
   .wordmark a {
