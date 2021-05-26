@@ -17,6 +17,15 @@ h5,
 h6,
 p {
 	margin: 1rem 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+}
+
+span, summary, details, figcaption, label {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
 }
 
 mark {

@@ -21,15 +21,15 @@
 	--font-form: var(--sans);
 	--background-body: var(--base-white);
   --background-form: var(--base-off-white);
-	--color-body: var(--base-off-black);
+	--color-body: var(--base-off-black-text);
 	--color-placeholder: var(--base-gray-dark);
-  --color-link: var(--base-off-black);
+  --color-link: var(--base-off-black-text);
   --color-focus: var(--base-white);
 	--color-border: var(--base-gray-light);
 	--color-selection: var(--base-gray-light);
   --color-highlight: var(--base-yellow);
-	--size-sm: 14px;
-	--size-md: 18px;
+	--size-sm: 16px;
+	--size-md: 21px;
 
 	--max-width: 540px;
 	--radius: 6px;
@@ -46,11 +46,11 @@ h1, h2, h3 {
 }
 
 h1 {
-	font-size: 32px;
+	font-size: 48px;
 }
 
 h2 {
-	font-size: 24px;
+	font-size: 36px;
 }
 
 blockquote {
@@ -62,7 +62,7 @@ details span {
 	padding: 0 1em;
 	margin-top: 1em;
 	margin-left: 0;
-	border-left: 2px solid rgba(255, 255, 255, 0.2);
+	border-left: 2px solid rgba(0, 0, 0, 0.2);
 }
 
 details summary > * {
@@ -72,7 +72,9 @@ details summary > * {
 summary {
 	cursor: pointer;
 	margin: 0 auto;
-	background: rgba(255, 255, 255, 0.2);
+	background: var(--base-white-transparent);
+	border: 1px solid var(--base-black-transparent);
+	box-shadow: 3px 3px 5px rgba(0,0,0,.2);
 	padding: 0.5em;
 	border-radius: var(--radius);
 }

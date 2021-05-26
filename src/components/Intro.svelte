@@ -22,8 +22,28 @@
     padding-bottom: 3em;
   }
 
+  summary {
+    background-color: #222222;
+    color: #fff;
+    border: none;
+  }
+
+  ::marker{
+    color: white;
+  }
+
   h1 {
     margin: 0 auto;
-    color: var(--base-off-white);
+    color: var(--base-white);
   }
+
+  details span {
+    border-left: 2px solid rgba(255, 255, 255, 0.2);
+  }
+
+  details summary span {
+    border-left: none;
+  }
+
+
 </style>
