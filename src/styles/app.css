@@ -27,17 +27,20 @@
   --color-focus: var(--base-white);
 	--color-border: var(--base-gray-light);
 	--color-selection: var(--base-gray-light);
-  --color-highlight: var(--base-yellow);
+  --color-highlight: var(--base-gray-light);
 	--size-sm: 16px;
 	--size-md: 21px;
 
 	--max-width: 540px;
 	--radius: 6px;
+	--theme-0: var(--base-yellow);
+	--theme-1: var(--base-red);
+	--theme-2: var(--base-blue);
+	--theme-3: var(--base-green);
 }
 
 body {
 	font-size: var(--size-md);
-	background-color: var(--base-red);
 }
 
 h1, h2, h3 {

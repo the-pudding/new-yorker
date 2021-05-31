@@ -1,17 +1,41 @@
 <script>
+  import { getContext } from "svelte";
   export let data;
+
+  const { themeCount } = getContext("app");
 </script>
 
 {#if data.length}
-  <div id="archive">
+  <section id="archive">
     <div class="col">
-      <p>Each week we try a new attempt!</p>
+      <h3>Each week we try a new approach!</h3>
 
       <ul>
-        {#each data as { slug, title }}
-          <li><a href="/contests/{slug}">#{slug}: {title}</a></li>
+        {#each data as { slug, title, attempt, date }}
+          <li style="--theme: var(--theme-{+slug % themeCount});">
+            <a href="contest/{slug}">#{attempt}: {title} <span class="sm">{date}</span></a>
+          </li>
         {/each}
       </ul>
     </div>
-  </div>
+  </section>
 {/if}
+
+<style>
+  section {
+    margin-bottom: 2em;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  li a {
+    display: flex;
+    background-color: var(--theme);
+    text-decoration: none;
+    padding: 1em;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>

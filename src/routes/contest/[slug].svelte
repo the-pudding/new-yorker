@@ -33,20 +33,99 @@
   export let slug;
   export let date;
   export let title;
-  export let description;
+  export let dek;
   export let image;
   export let attempt;
+  export let author;
+  export let explanation;
+  export let submission;
+  export let widgetData;
+  export let widgetResult;
+
+  const themeCount = 4;
 </script>
 
 <Meta title={`New Yorker Cartoon Caption Contest Attempt #${attempt}: ${title}`} />
 
-<div class="info">
-  <h2>Attempt #{attempt}: {title}</h2>
+<section style="--theme: var(--theme-{+slug % themeCount});">
+  <div class="info">
+    <div class="col">
+      <h1>Attempt #{attempt}: {title}</h1>
+      <time>{date}</time>
+      <p>{@html dek}</p>
+      <a href="../../">Back to Project</a>
+    </div>
+  </div>
 
-  <p>Contest #{slug}, {date}</p>
-  <p>{description}</p>
-</div>
+  <div class="col">
+    <figure>
+      <figcaption class="sm">
+        <a href="https://www.newyorker.com/cartoons/contest">#{slug}</a>: Here is the cartoon for
+        {date} by {author}
+      </figcaption>
+      <img src={image} alt="captionless cartoon by {author}" />
+    </figure>
 
-<div class="prompt">
-  <img src={image} alt="captionless cartoon" />
-</div>
+    <div class="submission">
+      <p><strong>Our submission:</strong> {submission}</p>
+      <details class="sm">
+        <summary>
+          <span>Check out all three generated captions.</span>
+        </summary>
+        <span>
+          {#each widgetData as caption}
+            <p>{caption}</p>
+          {/each}
+        </span>
+      </details>
+    </div>
+
+    <div class="explanation sm">
+      <h2>About this approach</h2>
+      {#each explanation as { value }}
+        <p>{@html value}</p>
+      {/each}
+      <p><a href="../../">Back to Project</a></p>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    background-color: var(--theme);
+    padding-bottom: 2em;
+  }
+
+  .info {
+    background-color: var(--base-off-black);
+    color: var(--base-off-white);
+    padding-bottom: 2em;
+  }
+
+  h1 {
+    margin-top: 0;
+  }
+
+  h2 {
+    margin-top: 2em;
+  }
+
+  figure {
+    margin-top: 3em;
+  }
+
+  figure,
+  img {
+    width: 100%;
+    display: block;
+  }
+
+  figcaption {
+    line-height: 1.4;
+    margin-bottom: 1em;
+  }
+
+  a {
+    color: currentColor;
+  }
+</style>
