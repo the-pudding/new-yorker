@@ -4,9 +4,6 @@
   export const hydrate = false;
 
   export async function load({ page, fetch, session, context }) {
-    // const url = `/blog/${page.params.slug}.json`;
-    // const res = await fetch(url);
-
     const contests = copy.contest.map((d, i) => ({
       ...d,
       attempt: i + 1
@@ -29,6 +26,7 @@
 </script>
 
 <script>
+  import { base } from "$app/paths";
   import Meta from "$components/Meta.svelte";
   export let slug;
   export let date;
@@ -73,8 +71,9 @@
           <span>Check out all three generated captions.</span>
         </summary>
         <span>
-          {#each widgetData as caption}
-            <p>{caption}</p>
+          {#each widgetData as caption, i}
+            <p><strong>{caption}</strong></p>
+            <p class="result">{widgetResult[i]} of readers thought it was funny.</p>
           {/each}
         </span>
       </details>
@@ -127,5 +126,13 @@
 
   a {
     color: currentColor;
+  }
+
+  details p {
+    margin: 0.5em 0;
+  }
+
+  .result {
+    margin-bottom: 2em;
   }
 </style>

@@ -38,4 +38,8 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  a.hide {
+    display: none;
+  }
 </style>
