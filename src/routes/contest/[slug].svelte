@@ -51,7 +51,7 @@
       <h1>Attempt #{attempt}: {title}</h1>
       <time>{date}</time>
       <p>{@html dek}</p>
-      <a href="../../">Back to Project</a>
+      <a href={base}>Back to Project</a>
     </div>
   </div>
 
