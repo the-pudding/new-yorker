@@ -51,7 +51,7 @@
       <h1>Attempt #{attempt}: {title}</h1>
       <time>{date}</time>
       <p>{@html dek}</p>
-      <a href={base}>Back to Project</a>
+      <a href="{base}/">Back to Project</a>
     </div>
   </div>
 
@@ -84,7 +84,7 @@
       {#each explanation as { value }}
         <p>{@html value}</p>
       {/each}
-      <p><a href="../../">Back to Project</a></p>
+      <p><a href="{base}/">Back to Project</a></p>
     </div>
   </div>
 </section>

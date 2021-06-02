@@ -15,7 +15,7 @@
       <ul>
         {#each data as { slug, title, attempt, date }}
           <li style="--theme: var(--theme-{+slug % themeCount});">
-            <a href="{base}/contest/{slug}">#{attempt}: {title} <span class="sm">{date}</span></a>
+            <a href="contest/{slug}">#{attempt}: {title} <span class="sm">{date}</span></a>
           </li>
         {/each}
       </ul>
