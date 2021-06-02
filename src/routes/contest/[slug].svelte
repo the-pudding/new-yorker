@@ -6,7 +6,7 @@
   export async function load({ page, fetch, session, context }) {
     const contests = copy.contest.map((d, i) => ({
       ...d,
-      attempt: i + 1
+      attempt: copy.contest.length - i
     }));
     const contest = contests.find((d) => d.slug === page.params.slug);
 
