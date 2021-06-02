@@ -72,7 +72,7 @@ details summary > * {
 	display: inline;
 }
 
-summary {
+summary, input {
 	cursor: pointer;
 	margin: 0 auto;
 	background: var(--base-white-transparent);

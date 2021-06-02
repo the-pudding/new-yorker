@@ -3,6 +3,7 @@
   import { fade } from "svelte/transition";
   import shuffle from "$utils/shuffle.js";
   import ButtonSet from "$components/helpers/ButtonSet.svelte";
+  import Newsletter from "$components/Newsletter.svelte";
   export let slug;
   export let data;
 
@@ -117,7 +118,11 @@
     {/key}
   {:else}
     <div class="thanks" in:fade>
-      <p>Thanks for voting!</p>
+      <h3>Thanks for voting!</h3>
+      <p class="sm">
+        Stay updated: get notified when we have a new approach and captions to rate (weekly-ish).
+      </p>
+      <Newsletter />
     </div>
   {/if}
 </div>
@@ -146,8 +151,11 @@
   }
 
   .thanks {
-    transform: translateY(140px);
+    margin-top: 2em;
     text-align: center;
+  }
+
+  .thanks h3 {
     font-family: var(--serif);
   }
 
