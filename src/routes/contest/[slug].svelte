@@ -43,7 +43,11 @@
   const themeCount = 4;
 </script>
 
-<Meta title={`New Yorker Cartoon Caption Contest Attempt #${attempt}: ${title}`} />
+<Meta
+  title={`Attempt #${attempt}: ${title}`}
+  url="https://pudding.cool/projects/caption-contest"
+  description="Help a Computer Win the New Yorker Cartoon Caption Contest"
+/>
 
 <section style="--theme: var(--theme-{+slug % themeCount});">
   <div class="info">
