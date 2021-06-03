@@ -7,96 +7,64 @@
   const firebaseConfig = {
     apiKey: "AIzaSyBGOC8CbEAvm6WUSKfvj4_VPFa4zUuYy6k",
     authDomain: "new-yorker-da6db.firebaseapp.com",
-    projectId: "new-yorker-da6db"
+    projectId: "new-yorker-da6db",
+    databaseURL: "https://new-yorker-da6db-default-rtdb.firebaseio.com"
   };
 
   let firebase;
   let app;
   let db;
-  let submitData = [];
-  let status = "waiting";
+  let textareaValue;
 
-  const onSubmit = () => {
-    // const doc = db.collection(slug).doc("submit");
-    // doc.update({ [[value]]: firebase.firestore.FieldValue.increment(1) });
-    // selected = undefined;
-    // current += 1;
+  const onSubmit = (e) => {
+    e.preventDefault();
+    showMessage();
+    db.ref(`${slug}/descriptions`)
+      .push({ value: textareaValue })
+      .then(() => {
+        textareaValue = "";
+      })
+      .catch(console.log);
   };
 
   onMount(async () => {
     const module = await import("firebase/app");
     firebase = module.default;
-    await import("firebase/firestore");
+    await import("@firebase/database");
 
-    if (!firebase.apps.length) {
-      app = firebase.initializeApp(firebaseConfig);
-      db = firebase.firestore(app);
-      // fetchRatings();
-    }
+    app = firebase.initializeApp(firebaseConfig);
+    db = app.database();
+    console.log(db);
   });
-
-  $: if (typeof selected === "number") onVote();
 </script>
 
-<div class="wrapper">
-  {#if current < captions.length}
-    <p class="counter sm">Caption {current + 1} of {captions.length}</p>
-    {#key current}
-      <div in:fade>
-        <!-- <button class="btn" on:click={reset}>RESET</button> -->
-        <p class="caption">{captions[current].text}</p>
-        <p class="prompt sm">Is this AI-generated caption funny?</p>
-        <div class="vote">
-          <ButtonSet
-            bind:value={selected}
-            options={[
-              { value: 0, label: "It stinks!", emoji: "😴" },
-              { value: 1, label: "It’s okay...", emoji: "😐" },
-              { value: 2, label: "It works!", emoji: "😂" }
-            ]}
-          />
-        </div>
-      </div>
-    {/key}
-  {:else}
-    <div class="thanks" in:fade>
-      <p>Thanks for voting!</p>
+<div class="wrapper col">
+  <form>
+    <div class="inner">
+      <textarea bind:value={textareaValue} rows="4" />
+      <input type="submit" on:click={onSubmit} value="Submit" />
     </div>
-  {/if}
+  </form>
 </div>
 
 <style>
   .wrapper {
-    min-height: 280px;
+    text-align: left;
   }
 
-  .vote {
-    margin: 0 auto;
-    padding-bottom: 2em;
+  .inner > * {
+    display: block;
   }
 
-  .counter {
-    text-align: center;
+  textarea {
+    width: 100%;
+    resize: none;
+    line-height: 1.4;
   }
 
-  .prompt {
-    text-align: center;
-  }
-
-  .caption {
-    font-family: var(--serif);
-    text-align: center;
-  }
-
-  .thanks {
-    transform: translateY(140px);
-    text-align: center;
-    font-family: var(--serif);
-  }
-
-  @media only screen and (min-width: 600px) {
-    .caption {
-      font-size: 1.25em;
-    }
+  input {
+    background-color: var(--base-off-black);
+    color: var(--base-white);
+    margin: 1em 0;
   }
 </style>

@@ -4,6 +4,7 @@
   import Contest from "$components/Contest.svelte";
   import Archive from "$components/Archive.svelte";
   import About from "$components/About.svelte";
+  import Submit from "$components/Submit.svelte";
   import Footer from "$components/Footer.svelte";
   import copy from "$data/doc.json";
 
@@ -43,6 +44,7 @@
   <Archive data={archiveData} />
   <About tldr={copy.aboutTldr} full={copy.about} credits={copy.credits} />
 
+  <!-- <Submit slug={latest.slug} /> -->
   <Footer />
 </div>
 
