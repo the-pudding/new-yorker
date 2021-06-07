@@ -6,6 +6,7 @@
   import About from "$components/About.svelte";
   import Submit from "$components/Submit.svelte";
   import Footer from "$components/Footer.svelte";
+  import Newsletter from "$components/Newsletter.svelte";
   import copy from "$data/doc.json";
 
   const themeCount = 4;
@@ -37,6 +38,8 @@
       <div class="col">
         <h2>🚧 Work In Progress 🚧</h2>
         <p>{copy.readyMessage}</p>
+        <p class="sm">Get notified when this week’s approach is ready.</p>
+        <Newsletter center={false} />
       </div>
     </section>
   {/if}
