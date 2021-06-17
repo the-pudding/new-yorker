@@ -31,19 +31,7 @@
 
 <Intro />
 <div class="c" style="--theme: var(--theme-{theme});">
-  <section class="wip">
-    <div class="col">
-      <h2>🚨 This project is paused in support of the <strong>New Yorker Union</strong></h2>
-      <p>
-        The New Yorker Union is prepared to strike. We support their effort. Here are <a
-          href="https://www.newyorkerunion.com/speakout">more details</a
-        > on how you can support them too.
-      </p>
-      <p>Sign up to get notified when this project resumes.</p>
-      <Newsletter center={false} />
-    </div>
-  </section>
-  <!-- {#if copy.ready === "true"}
+  {#if copy.ready === "true"}
     <Contest {...latest} prompt={copy.prompt} />
   {:else}
     <section class="wip">
@@ -57,7 +45,7 @@
   {/if}
 
   <Archive data={archiveData} />
-  <About tldr={copy.aboutTldr} full={copy.about} credits={copy.credits} /> -->
+  <About tldr={copy.aboutTldr} full={copy.about} credits={copy.credits} />
 
   <!-- <Submit slug={latest.slug} /> -->
   <Footer />
