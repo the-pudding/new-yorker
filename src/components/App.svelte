@@ -26,7 +26,7 @@
   }));
 
   const latest = contests[0];
-  const theme = +latest.slug % themeCount;
+  const theme = +latest.attempt % themeCount;
 </script>
 
 <Intro />
@@ -46,8 +46,6 @@
 
   <Archive data={archiveData} />
   <About tldr={copy.aboutTldr} full={copy.about} credits={copy.credits} />
-
-  <!-- <Submit slug={latest.slug} /> -->
   <Footer />
 </div>
 

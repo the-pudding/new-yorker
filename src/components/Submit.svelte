@@ -3,6 +3,7 @@
   import { fade } from "svelte/transition";
   import shuffle from "$utils/shuffle.js";
   export let slug;
+  export let prompt = "";
 
   const firebaseConfig = {
     apiKey: "AIzaSyBGOC8CbEAvm6WUSKfvj4_VPFa4zUuYy6k",
@@ -41,6 +42,7 @@
 <div class="wrapper col">
   <form>
     <div class="inner">
+      <p>{prompt}</p>
       <textarea bind:value={textareaValue} rows="4" />
       <input type="submit" on:click={onSubmit} value="Submit" />
     </div>

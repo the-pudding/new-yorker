@@ -1,5 +1,6 @@
 <script>
   import IsThisFunny from "$components/IsThisFunny.svelte";
+  import Submit from "$components/Submit.svelte";
   export let slug;
   export let date;
   export let hed;
@@ -39,6 +40,9 @@
       </figure>
       {#if widgetName === "IsThisFunny"}
         <IsThisFunny {slug} data={widgetData} />
+      {/if}
+      {#if widgetName === "Submit"}
+        <Submit {slug} prompt={widgetData} />
       {/if}
     </div>
 
