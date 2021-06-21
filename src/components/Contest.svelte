@@ -31,7 +31,11 @@
     </div>
 
     <div class="prompt">
-      <h2>Help the computer submit its best caption to this week’s contest.</h2>
+      {#if widgetName === "IsThisFunny"}
+        <h2>Help the computer submit its best caption to this week’s contest.</h2>
+      {:else}
+        <h2>Help the computer understand what is in this week’s image.</h2>
+      {/if}
       <figure>
         <figcaption class="sm">
           <a href="https://www.newyorker.com/cartoons/contest">#{slug}</a>: Here is the cartoon for
