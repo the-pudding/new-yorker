@@ -125,6 +125,15 @@
       <Newsletter />
     </div>
   {/if}
+  <div class="submit sm">
+    <p>
+      We’ll submit the funniest caption. Your votes will also inform next week’s approach to
+      generating captions; our version of a comedian testing out new material in comedy clubs.
+    </p>
+    <p>
+      Come back next week to vote on captions for a new cartoon and see how our approach evolves.
+    </p>
+  </div>
 </div>
 
 <style>

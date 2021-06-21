@@ -1,9 +1,10 @@
 <script>
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
-  import shuffle from "$utils/shuffle.js";
+  import Newsletter from "$components/Newsletter.svelte";
   export let slug;
   export let prompt = "";
+  export let maxlength = 1000;
 
   const firebaseConfig = {
     apiKey: "AIzaSyBGOC8CbEAvm6WUSKfvj4_VPFa4zUuYy6k",
@@ -16,10 +17,11 @@
   let app;
   let db;
   let textareaValue;
+  let submitted = false;
 
   const onSubmit = (e) => {
     e.preventDefault();
-    showMessage();
+    submitted = true;
     db.ref(`${slug}/descriptions`)
       .push({ value: textareaValue })
       .then(() => {
@@ -35,23 +37,35 @@
 
     app = firebase.initializeApp(firebaseConfig);
     db = app.database();
-    console.log(db);
   });
 </script>
 
 <div class="wrapper col">
-  <form>
-    <div class="inner">
-      <p>{prompt}</p>
-      <textarea bind:value={textareaValue} rows="4" />
-      <input type="submit" on:click={onSubmit} value="Submit" />
+  {#if submitted}
+    <div class="thanks" in:fade>
+      <h3>Thanks for submitting!</h3>
+      <p class="sm">Stay updated: get notified when we have generated the caption.</p>
+      <Newsletter />
     </div>
-  </form>
+  {:else}
+    <form>
+      <div class="inner">
+        <p>{prompt}</p>
+        <textarea bind:value={textareaValue} rows="4" />
+        <div class="below">
+          <input {maxlength} type="submit" on:click={onSubmit} value="Submit" />
+          <p class="max sm">{maxlength} character limit</p>
+        </div>
+      </div>
+    </form>
+  {/if}
 </div>
 
 <style>
   .wrapper {
     text-align: left;
+    padding: 0;
+    margin: 1em 0;
   }
 
   .inner > * {
@@ -68,5 +82,10 @@
     background-color: var(--base-off-black);
     color: var(--base-white);
     margin: 1em 0;
+  }
+
+  .below {
+    display: flex;
+    justify-content: space-between;
   }
 </style>
