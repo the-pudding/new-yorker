@@ -41,7 +41,13 @@
     align-items: center;
   }
 
-  a.hide {
-    display: none;
+  @media only screen and (max-width: 400px) {
+    li a {
+      font-size: 14px;
+    }
+
+    li span.sm {
+      font-size: 14px;
+    }
   }
 </style>
