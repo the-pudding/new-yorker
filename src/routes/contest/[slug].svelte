@@ -38,6 +38,7 @@
   export let explanation;
   export let submission;
   export let widgetData;
+  export let widgetName;
   export let widgetResult;
 
   const themeCount = 4;
@@ -49,7 +50,7 @@
   description="Help a Computer Win the New Yorker Cartoon Caption Contest"
 />
 
-<section style="--theme: var(--theme-{+slug % themeCount});">
+<section style="--theme: var(--theme-{+attempt % themeCount});">
   <div class="info">
     <div class="col">
       <h1>Attempt #{attempt}: {title}</h1>
@@ -70,17 +71,19 @@
 
     <div class="submission">
       <p><strong>Our submission:</strong> {submission}</p>
-      <details class="sm">
-        <summary>
-          <span>Check out all three generated captions.</span>
-        </summary>
-        <span>
-          {#each widgetData as caption, i}
-            <p><strong>{caption}</strong></p>
-            <p class="result">{widgetResult[i]} of readers thought it was funny.</p>
-          {/each}
-        </span>
-      </details>
+      {#if widgetName === "IsThisFunny"}
+        <details class="sm">
+          <summary>
+            <span>Check out all three generated captions.</span>
+          </summary>
+          <span>
+            {#each widgetData as caption, i}
+              <p><strong>{caption}</strong></p>
+              <p class="result">{widgetResult[i]} of readers thought it was funny.</p>
+            {/each}
+          </span>
+        </details>
+      {/if}
     </div>
 
     <div class="explanation sm">
