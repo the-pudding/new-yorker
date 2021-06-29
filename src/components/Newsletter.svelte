@@ -52,6 +52,11 @@
     display: flex;
     align-items: center;
   }
+
+  .mc_embed_signup {
+    display: flex;
+  }
+
   .center {
     justify-content: center;
   }
