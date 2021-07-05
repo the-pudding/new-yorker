@@ -30,6 +30,8 @@
 
   li {
     list-style-type: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0.25em 0;
   }
 
   li a {
