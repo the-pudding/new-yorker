@@ -89,7 +89,7 @@
     <div class="explanation sm">
       <h2>About this approach</h2>
       {#each explanation as { value }}
-        <p>{@html value}</p>
+        <p>{@html value.replace("\\:", ":")}</p>
       {/each}
       <p><a href="{base}/">Back to Project</a></p>
     </div>

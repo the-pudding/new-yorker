@@ -120,6 +120,10 @@ img {
 	padding: 0 1em;
 }
 
+.info a, .info a:visited {
+	color: var(--base-white);
+}
+
 @media only screen and (min-width: 600px) {
 	body {
 		--size-sm: 16px;
