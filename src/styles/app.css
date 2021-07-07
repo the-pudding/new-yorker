@@ -126,7 +126,7 @@ img {
 
 #contest a, #contest a:visited {
 	color: var(--base-black);
-};
+}
 
 @media only screen and (min-width: 600px) {
 	body {
