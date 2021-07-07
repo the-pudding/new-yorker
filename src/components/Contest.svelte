@@ -13,7 +13,7 @@
   export let widgetMax;
 </script>
 
-<section>
+<section id="contest">
   <div class="col">
     <div class="info">
       <p>{@html hed}</p>
