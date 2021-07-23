@@ -7,6 +7,7 @@
   export let dek;
   export let image;
   export let author;
+  export let submission;
   export let explanation;
   export let widgetName;
   export let widgetData;
@@ -34,7 +35,8 @@
       {#if widgetName === "IsThisFunny"}
         <h2>Help the computer submit its best caption to this week’s contest.</h2>
       {:else}
-        <h2>Help the computer understand what is in this week’s image.</h2>
+        <!-- <h2>Help the computer understand what is in this week’s image.</h2> -->
+        <h2>Here is this week’s image.</h2>
       {/if}
       <figure>
         <figcaption class="sm">
@@ -45,9 +47,10 @@
       </figure>
       {#if widgetName === "IsThisFunny"}
         <IsThisFunny {slug} data={widgetData} />
-      {/if}
-      {#if widgetName === "Submit"}
+      {:else if widgetName === "Submit"}
         <Submit {slug} prompt={widgetData} maxlength={widgetMax} />
+      {:else}
+        <p style="margin-top: 1em;">Our Submission: <strong>{submission}</strong></p>
       {/if}
     </div>
   </div>
