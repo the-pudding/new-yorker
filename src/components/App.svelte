@@ -4,6 +4,8 @@
   import Contest from "$components/Contest.svelte";
   import Archive from "$components/Archive.svelte";
   import About from "$components/About.svelte";
+  import Reflection from "$components/Reflection.svelte";
+
   import Submit from "$components/Submit.svelte";
   import Footer from "$components/Footer.svelte";
   import Newsletter from "$components/Newsletter.svelte";
@@ -30,6 +32,8 @@
 </script>
 
 <Intro />
+<Reflection />
+
 <div class="c" style="--theme: var(--theme-{theme});">
   {#if copy.ready === "true"}
     <Contest {...latest} prompt={copy.prompt} />
