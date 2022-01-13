@@ -70,6 +70,7 @@
   .wordmark {
     display: flex;
     margin: 0;
+    fill: rgba(255,255,255,.6);
   }
 
   .wordmark p {
@@ -81,16 +82,12 @@
 
   .wordmark a {
     border: none;
-    color: var(--base-gray-medium);
+    color: rgba(255,255,255,.6);
     width: 120px;
   }
 
-  .wordmark a:hover {
-    background-color: transparent;
-  }
-
-  .wordmark svg path {
-    fill: rgba(255,255,255,.6);
+  :global(.wordmark svg path) {
+    fill: currentColor;
   }
 
 </style>
