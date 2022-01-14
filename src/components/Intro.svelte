@@ -90,4 +90,18 @@
     fill: currentColor;
   }
 
+  @media only screen and (max-width: 600px) {
+    .wide-col {
+      width: calc(100% - 2rem);
+      padding-top: 1rem;
+    }
+    h1 {
+      font-size: 48px;
+    }
+
+    .dek {
+      font-size: 24px;
+    }
+  }
+
 </style>

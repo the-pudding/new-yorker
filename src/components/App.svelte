@@ -38,16 +38,15 @@
   {#if copy.ready === "true"}
     <Contest {...latest} prompt={copy.prompt} />
   {:else}
-    <section class="wip">
+    <!-- <section class="wip">
       <div class="col">
         <h2>🚧 Work In Progress 🚧</h2>
         <p>{copy.readyMessage}</p>
         <p class="sm">Get notified when this week’s approach is ready.</p>
         <Newsletter center={false} />
       </div>
-    </section>
+    </section> -->
   {/if}
-
   <Archive data={archiveData} />
   <About tldr={copy.aboutTldr} full={copy.about} credits={copy.credits} />
   <Footer />
