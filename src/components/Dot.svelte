@@ -1,7 +1,6 @@
 <script>
     
     import { onMount } from 'svelte';
-    // import { scaleLinear, format } from "d3";
 
     export let data;
     export let maxEntries;
@@ -13,10 +12,6 @@
     let dotScale = scaleLinear()
         .domain([0, data.entries])
         .range([0,100]);
-
-
-
-
 
 </script>
 
