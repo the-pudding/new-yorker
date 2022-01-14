@@ -37,6 +37,11 @@
 	--theme-1: var(--base-red);
 	--theme-2: var(--base-blue);
 	--theme-3: var(--base-yellow);
+
+	--base-color: #F5F6F0;
+	--backgroundGradient: linear-gradient(var(--base-color),#e7d4e5,#cad9e5,#eeebcc,#e9d8e3,#dbd4ed,var(--base-color));
+    --backgroundColor: var(--base-color);
+
 }
 
 body {

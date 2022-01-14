@@ -4,7 +4,5 @@
 </script>
 
 <main id="content">
-  <Header />
-
   <slot />
 </main>
