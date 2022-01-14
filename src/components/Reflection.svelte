@@ -492,7 +492,7 @@
         margin-top: 90px;
     }
 
-    p, ul, li {
+    p, ul, li, details {
         width: calc(100% - 2rem);
         margin: 0 auto;
         max-width: 560px;

@@ -5,19 +5,13 @@
     export let data;
     export let maxEntries;
 
-	onMount(() => {
-        // let lineScale = scaleLinear()
-        //     .domain([0, maxEntries])
-        //     .range([0,100]);
+    let lineScale = scaleLinear()
+        .domain([0, maxEntries])
+        .range([0,100]);
 
-        // let dotScale = scaleLinear()
-        //     .domain([0, data.entries])
-        //     .range([0,100]);
-	});
-
-
-
-
+    let dotScale = scaleLinear()
+        .domain([0, data.entries])
+        .range([0,100]);
 
 </script>
 
