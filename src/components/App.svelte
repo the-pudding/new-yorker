@@ -1,14 +1,11 @@
 <script>
   import { setContext } from "svelte";
   import Intro from "$components/Intro.svelte";
-  import Contest from "$components/Contest.svelte";
   import Archive from "$components/Archive.svelte";
   import About from "$components/About.svelte";
   import Reflection from "$components/Reflection.svelte";
 
-  import Submit from "$components/Submit.svelte";
   import Footer from "$components/Footer.svelte";
-  import Newsletter from "$components/Newsletter.svelte";
   import copy from "$data/doc.json";
 
   const themeCount = 4;
@@ -35,18 +32,6 @@
 <Reflection />
 
 <div class="c" style="--theme: var(--theme-{theme});">
-  {#if copy.ready === "true"}
-    <Contest {...latest} prompt={copy.prompt} />
-  {:else}
-    <!-- <section class="wip">
-      <div class="col">
-        <h2>🚧 Work In Progress 🚧</h2>
-        <p>{copy.readyMessage}</p>
-        <p class="sm">Get notified when this week’s approach is ready.</p>
-        <Newsletter center={false} />
-      </div>
-    </section> -->
-  {/if}
   <Archive data={archiveData} />
   <About tldr={copy.aboutTldr} full={copy.about} credits={copy.credits} />
   <Footer />
@@ -54,10 +39,15 @@
 
 <style>
   .c {
-    background-color: var(--theme);
+    background-color: var(--base-black);
+    color: var(--base-white);
   }
 
-  .wip {
-    padding: 1em 0;
+  :global(.c p a) {
+    color: currentColor;
+  }
+
+  :global(.c summary) {
+    color: var(--base-black);
   }
 </style>

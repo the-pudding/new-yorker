@@ -3,12 +3,12 @@
 
   export const hydrate = false;
 
-  export async function load({ page, fetch, session, context }) {
+  export async function load({ params, fetch, session, context }) {
     const contests = copy.contest.map((d, i) => ({
       ...d,
       attempt: copy.contest.length - i
     }));
-    const contest = contests.find((d) => d.slug === page.params.slug);
+    const contest = contests.find((d) => d.slug === params.slug);
 
     if (contest) {
       return {
@@ -27,6 +27,7 @@
 
 <script>
   import { base } from "$app/paths";
+  import Header from "$components/Header.svelte";
   import Meta from "$components/Meta.svelte";
   export let slug;
   export let date;
@@ -44,6 +45,7 @@
   const themeCount = 4;
 </script>
 
+<Header />
 <Meta
   title={`Attempt #${attempt}: ${title}`}
   url="https://pudding.cool/projects/caption-contest"
